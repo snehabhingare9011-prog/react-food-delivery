@@ -1,8 +1,13 @@
 import  resLogo from "../assets/food_logo.png";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header=()=>{
 const[login,setlogin]=useState("login");
+  const[llogin,setllogin]=useState("login")
+  useEffect(()=>{
+    console.log("sneha bhingare");
+  },[login,llogin]);
   return(
   <div className="header">
       <div className="logo-container">
@@ -10,11 +15,12 @@ const[login,setlogin]=useState("login");
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact US</li>
+          <li> <Link to='/'>Home</Link></li>
+          <li> <Link to='/about'>About Us</Link></li>
+          <li><Link to='/contact'>Contact Us</Link></li>
           <li>Cart</li>
           <button onClick={()=>{ login=="login"?setlogin("logout"):setlogin("login")}}>{login}</button>
+            <button onClick={()=>{ llogin=="login"?setllogin("logout"):setllogin("login")}}>{login}</button>
           </ul>
       </div>
 

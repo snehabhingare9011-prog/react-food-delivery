@@ -9,11 +9,13 @@ const Body=()=>{
   const[inputText,setinputText]=useState("");
 
   const fetchdata=async()=>{
-    const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.64886431867022&lng=73.76002306438205&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const data=await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.64886431867022&lng=73.76002306438205&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+      console.log(data.status)
     const json= await data.json();
         // console.log(json)
         // console.log(json?.data);
-    setallreslist(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setallreslist(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setreslist(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
@@ -21,6 +23,8 @@ const Body=()=>{
    useEffect(()=>{
      fetchdata();
   },[]);
+
+
 
   if(reslist.length==0){
     return<Shimmer/>
