@@ -2,13 +2,12 @@
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 
+
 // const styleCard={
 //   color:"red"
 // }
 
 const AppLayout = () => {
-
-
 
   return (
     // <div className="app" style={styleCard}>

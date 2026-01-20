@@ -13,7 +13,7 @@ const appRouter=createBrowserRouter([
     {
        path:"/",
        element:<AppLayout/>,
-       errorElement:<Error/>,
+      
        children:[
         {
             path:'/',
@@ -35,7 +35,8 @@ const appRouter=createBrowserRouter([
             element:<Pizza></Pizza>,
         }
 
-       ]
+       ],
+        errorElement:<Error/>,
     },
    
 ])
