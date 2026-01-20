@@ -6,6 +6,9 @@ import { AboutUs } from "./components/AboutUs.jsx";
 import { ContactUS } from "./components/ContactUS.jsx";
 import { createBrowserRouter ,RouterProvider} from "react-router-dom";
 import { Error } from "./components/Error.jsx";
+import Pizza from "./components/Pizza.jsx";
+
+
 const appRouter=createBrowserRouter([
     {
        path:"/",
@@ -21,10 +24,15 @@ const appRouter=createBrowserRouter([
         path:"/about",
         element:<AboutUs/>
 
-        },
+      },
         {
         path:"/contact",
         element:<ContactUS/>
+        },
+
+        { 
+            path:"/restaurant/:id",
+            element:<Pizza></Pizza>,
         }
 
        ]
