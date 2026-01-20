@@ -3,6 +3,7 @@
  import Shimmer from "./Shimmer";
  import {Link} from 'react-router-dom';
  import useFetch from "../utils/useFetch";
+import useOnlineStatus from "../utils/UseOnlineStatus";
 
 
 const Body=()=>{
@@ -16,6 +17,12 @@ const Body=()=>{
       setreslist(Data);
     };
   }, [Data]);
+
+  const OnlineStatus=useOnlineStatus();
+
+  if(OnlineStatus=="offline"){
+    return <h1>You are Offline</h1>
+  }
  
 
   // const fetchdata=async()=>{
