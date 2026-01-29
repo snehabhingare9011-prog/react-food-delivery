@@ -1,5 +1,5 @@
-
-.header {
+@import "tailwindcss";
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,8 +48,8 @@
   transition: 0.3s;
    /* overflow: hidden;
   text-overflow: ellipsis;
-  /* overflow: hidden; */
-} 
+  /* overflow: hidden; *//*
+} /*
 
 .res-card:hover{
   transform: scale(1.05);
@@ -107,7 +107,7 @@
   flex-direction: column;
 animation: fadeIn 0.4s ease-in;
   /* 🔥 TRANSITION */
-  transition: transform 0.3s ease, opacity 0.3s ease;
+ /* transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .shimmer-card:hover {
@@ -138,7 +138,7 @@ animation: fadeIn 0.4s ease-in;
 }
 
 /* More skeleton rows */
-.remaing-items {
+/*.remaing-items {
   margin-top: 12px;
 }
 
@@ -148,7 +148,7 @@ animation: fadeIn 0.4s ease-in;
   content: "";
   display: block;
   height: 14px;
-  margin-bottom: 12px; /* more spacing */
+  margin-bottom: 12px; /* more spacing *//*
   border-radius: 6px;
   background: linear-gradient(
     90deg,
@@ -160,12 +160,12 @@ animation: fadeIn 0.4s ease-in;
   animation: shimmer 1.4s infinite;
 }
 
-/* Different widths */
+/* Different widths *//*
 .remaing-items::before { width: 85%; }
 .remaing-items::after { width: 70%; }
 .remaing-items span { width: 50%; }
 
-/* ===== Filter Bar ===== */
+/* ===== Filter Bar ===== *//*
 .filter-bar {
   display: flex;
   justify-content: center;
@@ -175,13 +175,13 @@ animation: fadeIn 0.4s ease-in;
   margin: 10px 20px;
   border-radius: 14px;
 
-  /* Glassmorphism */
+  /* Glassmorphism *//*
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* ===== Search Box ===== */
+/* ===== Search Box ===== *//*
 .search-box {
   display: flex;
   align-items: center;
@@ -189,9 +189,9 @@ animation: fadeIn 0.4s ease-in;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-}
+}*/
 
-/* ===== Input ===== */
+/* ===== Input ===== *//*
 .input-box {
   width: 260px;
   padding: 12px 14px;
@@ -202,9 +202,9 @@ animation: fadeIn 0.4s ease-in;
 
 .input-box::placeholder {
   color: #9ca3af;
-}
+}/*
 
-/* ===== Search Button ===== */
+/* ===== Search Button ===== *//*
 .search-btn {
   padding: 12px 18px;
   background: linear-gradient(135deg, #ff5200, #ff7849);
@@ -219,9 +219,9 @@ animation: fadeIn 0.4s ease-in;
 .search-btn:hover {
   background: linear-gradient(135deg, #e64a00, #ff5200);
   transform: translateX(2px);
-}
+}/*
 
-/* ===== Top Rated Button ===== */
+/* ===== Top Rated Button ===== *//*
 .top-rated-btn {
   padding: 12px 20px;
   background: linear-gradient(135deg, #1f2937, #374151);
@@ -238,9 +238,9 @@ animation: fadeIn 0.4s ease-in;
 .top-rated-btn:hover {
   background: linear-gradient(135deg, #111827, #1f2937);
   transform: scale(1.05);
-}
+}*/
 
-/* ===== Responsive ===== */
+/* ===== Responsive ===== *//*
 @media (max-width: 768px) {
   .filter-bar {
     flex-direction: column;
@@ -254,3 +254,9 @@ animation: fadeIn 0.4s ease-in;
     width: 100%;
   }
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+} 
+*/

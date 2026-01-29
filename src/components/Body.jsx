@@ -7,12 +7,16 @@ import useOnlineStatus from "../utils/UseOnlineStatus";
 
 
 const Body=()=>{
+  
   const[allreslist,setallreslist]=useState([]);
   const[reslist,setreslist]=useState([]);
   const[inputText,setinputText]=useState("");
    const Data=useFetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.64886431867022&lng=73.76002306438205&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+   console.log("Data inside the body:",Data);
+
   useEffect(() => {
     if (Data) {
+      console.log("inside use effect of body");
       setallreslist(Data);
       setreslist(Data);
     };
@@ -41,7 +45,7 @@ const Body=()=>{
   //    fetchdata();
   // },[]);
 
-return reslist.length==0?(<Shimmer/>):(
+return reslist.length==0?(<div> <Shimmer></Shimmer>{console.log("shimmer ui renderd")}</div>):(
 <div className="body">
   {/* <div className="search-container">
     <input type="text" className="input-box" value={inputText} onChange={(event)=>{setinputText(event.target.value); console.log(event.target.value)}}></input>
@@ -53,17 +57,17 @@ return reslist.length==0?(<Shimmer/>):(
         <button className="res-btn" onClick={()=>{ setreslist(allreslist.filter((re)=>{return re.info.avgRating>4.3}))}} > TOp rated Rest</button>
        
    </div> */}
-<div className="filter-bar">
+<div className="filter-bar  flex justify-center mt-8 items-center mb-2">
   <div className="search-box">
     <input
       type="text"
-      className="input-box"
+      className="input-box border border-solid border-black p-1"
       value={inputText}
       onChange={(e) => setinputText(e.target.value)}
       placeholder="Search restaurants..."
     />
     <button
-      className="search-btn"
+      className="search-btn text-4 font-semibold border border-solid bg-green-100 py-1 hover:bg-green-200  rounded-lg px-4 mx-2 cursor-pointer"
       onClick={() => {
         const filter = allreslist.filter((re) =>
           re.info.name.toLowerCase().includes(inputText.toLowerCase())
@@ -74,7 +78,7 @@ return reslist.length==0?(<Shimmer/>):(
     </button>
   </div>
  <button
-    className="top-rated-btn"
+    className="top-rated-btn border border-solid border-black font-bold bg-amber-100 cursor-pointer px-3 hover:bg-amber-200 py-1 rounded-lg"
     onClick={() =>
       setreslist(allreslist.filter((re) => re.info.avgRating > 4.3))
     }
@@ -85,7 +89,7 @@ return reslist.length==0?(<Shimmer/>):(
 
  
 
-  <div className="res-container">
+  <div className="res-container  flex  flex-wrap  justify-center gap-6  px-3 mt-6">
      {/* <RestaurantCard  resData={reslist[0]} /> 
      <RestaurantCard  resData={reslist[1]}/> */}
 

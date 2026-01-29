@@ -14,7 +14,7 @@ const fetchData=async()=>{
 }
   return (
     <div>
-        <h1>Name of tmhe Restaurant</h1>
+        <h1>Name of the Restaurant</h1>
         <h2>Menu</h2>
     </div>
   )

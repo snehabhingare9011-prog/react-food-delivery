@@ -8,6 +8,10 @@ import { createBrowserRouter ,RouterProvider} from "react-router-dom";
 import { Error } from "./components/Error.jsx";
 import Pizza from "./components/Pizza.jsx";
 
+import { lazy, Suspense } from "react";
+import Appp from "./components/Appp.jsx";
+const GRosery=lazy(()=>import('./components/GRosery.jsx'))
+
 
 const appRouter=createBrowserRouter([
     {
@@ -25,6 +29,11 @@ const appRouter=createBrowserRouter([
         element:<AboutUs/>
 
       },
+       {
+        path:"/g",
+        element:(<Suspense fallback={<h1>loading.........</h1>}><GRosery/></Suspense>)
+
+      },
         {
         path:"/contact",
         element:<ContactUS/>
@@ -33,7 +42,9 @@ const appRouter=createBrowserRouter([
         { 
             path:"/restaurant/:id",
             element:<Pizza></Pizza>,
-        }
+        },
+
+      
 
        ],
         errorElement:<Error/>,
@@ -44,3 +55,4 @@ const appRouter=createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter}/>);
+// root.render(<Appp/>)
